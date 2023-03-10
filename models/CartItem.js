@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Category extends Model { }
+class CartItem extends Model { }
 
-Category.init(
+CartItem.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,17 +11,27 @@ Category.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
+        cart_id: {
             type: DataTypes.STRING,
-            allowNull: false,
+            references: {
+                model: 'cart',
+                key: '_id',
+            }
+        },
+        item_id: {
+            type: DataTypes.STRING,
+            references: {
+                model: 'item',
+                key: '_id',
+            }
         },
     },
     {
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'category',
+        modelName: 'cartItem',
     }
 );
 
-module.exports = Category;
+module.exports = CartItem;
