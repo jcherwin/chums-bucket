@@ -1,27 +1,26 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Category extends Model { }
+class Cart extends Model { }
 
-Category.init(
+Cart.init(
     {
-        id: {
+        subtotal: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
         },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
+        _id: {
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
+            primaryKey: true,
         },
     },
     {
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'category',
+        modelName: 'cart',
     }
 );
 
-module.exports = Category;
+module.exports = Cart;

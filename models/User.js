@@ -35,6 +35,12 @@ User.init(
         len: [8],
       },
     },
+    cart_id: {
+      references: {
+        model: 'cart',
+        key: '_id',
+      }
+    }
   },
   {
     hooks: {
