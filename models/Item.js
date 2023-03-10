@@ -26,12 +26,13 @@ Item.init(
             allowNull: false,
         },
         price: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         keep_item_price: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.BOOLEAN,
             allowNull: false,
+            defaultValue: false,
         },
     },
     {
