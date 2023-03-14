@@ -1,12 +1,26 @@
 const router = require('express').Router();
+const { User, Category, Product } = require('../models');
 const withAuth = require('../utils/auth');
 
 
-router.get('/', withAuth, (req, res) => {
-    console.log('HOME');
-    res.render('home', {
-        loggedIn: req.session.loggedIn
-    });
+router.get('/', async (req, res) => {
+    try
+    {
+        const categoryData = await Category.findAll();
+      
+        const categories = categoryData.map((category) => category.get({ plain: true }));
+
+        //console.log(categories);
+
+        res.render('home', {
+            categories,
+            loggedIn: req.session.loggedIn
+        });
+    }
+    catch (err)
+    {
+        res.status(500).json(err);
+    }
 });
 
 router.get('/login', (req, res) => {

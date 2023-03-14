@@ -6,14 +6,20 @@ class Item extends Model { }
 Item.init(
     {
         _id: {
-            type: DataTypes.STRING,
-            allowNull: false,
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
             primaryKey: true,
         },
         product_id: {
             type: DataTypes.STRING,
             references: {
                 model: 'product',
+                key: '_id',
+            },
+        },
+        cart_id: {
+            references: {
+                model: 'cart',
                 key: '_id',
             },
         },
