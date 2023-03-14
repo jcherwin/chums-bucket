@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Product extends Model { }
 
-Product.init(
+init(
     {
         _id: {
             type: DataTypes.STRING,

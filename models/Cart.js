@@ -7,12 +7,18 @@ Cart.init(
     {
         subtotal: {
             type: DataTypes.INTEGER,
-            allowNull: false,
         },
         _id: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
             primaryKey: true,
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
         },
     },
     {
