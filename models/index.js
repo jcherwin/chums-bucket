@@ -3,7 +3,7 @@ const Category = require('./Category');
 const Product = require('./Product');
 const Item = require('./Item');
 const Cart = require('./Cart');
-const CartItem = require('./CartItem');
+// const CartItem = require('./CartItem');
 
 Cart.hasMany(Item, {
     foreignKey: 'cart_id',
@@ -14,11 +14,11 @@ Item.belongsTo(Cart, {
 });
 
 User.hasOne(Cart, {
-    foreignKey: 'cart_id',
+    foreignKey: 'user_id',
 });
 
 Cart.belongsTo(User, {
-    foreignKey: 'cart_id',
+    foreignKey: 'user_id',
 });
 
 Category.hasMany(Product, {

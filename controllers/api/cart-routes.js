@@ -5,7 +5,7 @@ router.get('/', async (req, res) => {
     try
     {
         const cartData = await Cart.findOne({
-            where: { user_id: req.session.userId },
+            where: { user_id: 1/*req.session.userId*/ },
             include: 
             [
                 { model: Item }
@@ -17,15 +17,15 @@ router.get('/', async (req, res) => {
                 user_id: req.session.userId
             });
             req.session.save(() => {
-                req.session.cartId = cartData._id;
+                req.session.cartId = cartData.id;
 
                 res.status(200).json(cartData);
             })
         }
       
-        const cart = cartData.map((cart) => cart.get({ plain: true }));
+        const cart = (cart) => cart.get({ plain: true });
 
-        //console.log(categories);
+        console.log(cart(cartData));
 
         res.render('cart', {
             cart,

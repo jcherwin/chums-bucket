@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
       
         const categories = categoryData.map((category) => category.get({ plain: true }));
 
-        //console.log(categories);
+        console.log(categories);
 
         res.render('home', {
             categories,
