@@ -4,7 +4,7 @@ services:
     image: mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: Welcome1
+      MYSQL_ROOT_PASSWORD: Nf25Metvj3@Zdp!
     ports:
       - "3306:3306"
   phpmyadmin:
@@ -13,6 +13,6 @@ services:
     environment:
       PMA_HOST: db
       PMA_USER: root
-      PMA_PASSWORD: Welcome1
+      PMA_PASSWORD: Nf25Metvj3@Zdp!
     ports:
       - "8080:80"

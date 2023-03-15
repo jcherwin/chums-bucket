@@ -3,33 +3,32 @@ const Category = require('./Category');
 const Product = require('./Product');
 const Item = require('./Item');
 const Cart = require('./Cart');
-const CartItem = require('./CartItem');
-
-Item.belongsTo(Cart, {
-    through: CartItem,
-    foreignKey: 'item_id',
-});
+// const CartItem = require('./CartItem');
 
 Cart.hasMany(Item, {
-    through: CartItem,
     foreignKey: 'cart_id',
 });
 
-Cart.belongsTo(User, {
+Item.belongsTo(Cart, {
     foreignKey: 'cart_id',
 });
 
 User.hasOne(Cart, {
-    foreignKey: 'cart_id',
+    foreignKey: 'user_id',
+});
+
+Cart.belongsTo(User, {
+    foreignKey: 'user_id',
+});
+
+Category.hasMany(Product, {
+    foreignKey: 'category_id'
 });
 
 Product.belongsTo(Category, {
     foreignKey: 'category_id',
 });
 
-Category.hasMany(Product, {
-    foreignKey: 'category_id'
-});
 
 module.exports = {
     Product,
