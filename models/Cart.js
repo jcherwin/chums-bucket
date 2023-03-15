@@ -5,13 +5,11 @@ class Cart extends Model { }
 
 Cart.init(
     {
-        subtotal: {
+        id: {
             type: DataTypes.INTEGER,
-        },
-        _id: {
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
+            allowNull: false,
             primaryKey: true,
+            autoIncrement: true,
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -23,6 +21,7 @@ Cart.init(
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'cart',

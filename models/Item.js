@@ -5,27 +5,18 @@ class Item extends Model { }
 
 Item.init(
     {
-        _id: {
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
             primaryKey: true,
-        },
-        product_id: {
-            type: DataTypes.STRING,
-            references: {
-                model: 'product',
-                key: '_id',
-            },
+            autoIncrement: true,
         },
         cart_id: {
+            type: DataTypes.INTEGER,
             references: {
                 model: 'cart',
-                key: '_id',
+                key: 'id',
             },
-        },
-        sku: {
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
         },
         name: {
             type: DataTypes.STRING,
@@ -35,14 +26,10 @@ Item.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        keep_item_price: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: false,
-        },
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'item',

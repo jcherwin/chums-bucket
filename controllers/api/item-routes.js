@@ -1,25 +1,25 @@
 const router = require('express').Router();
-const ecomCart = require('@ecomplus/shopping-cart');
-const { Category, Product, User, CartItem, Item } = require('../../models');
+const { Product, Item } = require('../../models');
 
-router.post('/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
-        const productData = await Product.findOne({
-            where: { _id: req.params.id }
+        const productData = await Product.findAll({
+            where: { id: req.params.id }
         });
 
         const product = productData.map((product) => product.get({ plain: true }));
-
-        ecomCart.addProduct({product});
-    
-        // const item = ecomCart.parseProduct({product});
-
+        
         const itemData = await Item.create({
-            product_id: product._id,
-            cart_id: req.session.cartId,
-            name: product.name,
-            price: product.base_price,
+            cart_id: 1/*req.session.cartId*/,
+            name: product[0].name,
+            price: product[0].price,
         });
+        
+        const itemData2 = await Item.findAll({
+            where: { id: req.params.id }
+        });
+        const item = itemData2.map((item) => item.get({ plain: true }));
+        console.log(item[0]);
         
     } catch (err) {
         console.log(err);

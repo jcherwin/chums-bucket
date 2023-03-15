@@ -4,7 +4,7 @@ const { Category, Product, User, CartItem, Item } = require('../../models');
 router.get('/:id', async (req, res) => {
     try
     {
-        const productData = await Category.findOne({ 
+        const productData = await Category.findAll({ 
             where: {
                 id: req.params.id
             },
@@ -14,12 +14,12 @@ router.get('/:id', async (req, res) => {
             ]
         });
       
-        const products = productData.map((product) => product.get({ plain: true }));
+        const category = productData.map((product) => product.get({ plain: true }));
 
-        //console.log(products);
+        console.log(category[0]);
 
         res.render('category', {
-            products,
+            category,
             loggedIn: req.session.loggedIn
         });
     }
