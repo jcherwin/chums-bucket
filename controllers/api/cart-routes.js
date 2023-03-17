@@ -1,3 +1,4 @@
+var _ = require('lodash');
 const router = require('express').Router();
 const { Category, Product, User, CartItem, Item, Cart } = require('../../models');
 
@@ -23,13 +24,16 @@ router.get('/', async (req, res) => {
             })
         }
       
-        const cart = (cart) => cart.get({ plain: true });
+        const getCart = (cart) => cart.get({ plain: true });
+        const cart = getCart(cartData);
 
-        console.log(cart(cartData));
+        const prices = _.map(cart.items, 'price');
+        
+        cart.subtotal = _.sum(prices)
+        console.log(cart);
 
         res.render('cart', {
             cart,
-            loggedIn: req.session.loggedIn
         });
     }
     catch (err)
