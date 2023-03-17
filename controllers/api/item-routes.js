@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Product, Item } = require('../../models');
 
+//GET product by id and create item for cart
 router.get('/:id', async (req, res) => {
     try {
         const productData = await Product.findAll({
@@ -15,11 +16,13 @@ router.get('/:id', async (req, res) => {
             price: product[0].price,
         });
         
-        const itemData2 = await Item.findAll({
-            where: { id: req.params.id }
-        });
-        const item = itemData2.map((item) => item.get({ plain: true }));
-        console.log(item[0]);
+        // const itemData2 = await Item.findAll({
+        //     where: { id: req.params.id }
+        // });
+        // const item = itemData2.map((item) => item.get({ plain: true }));
+        // console.log(item[0]);
+
+        res.status(200).json(itemData);
         
     } catch (err) {
         console.log(err);
@@ -27,7 +30,36 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+//UPDATE one item
+router.put('/:id', async (req, res) => {
+    try {
+        const itemData = await Item.update(
+        {
+            quantity: req.body.quantity,
+        },
+        {
+            where: { id: req.params.id },
+        });
 
+        res.status(200).json(itemData);
+        
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
+//DELETE one item
+router.delete('/:id', async (req, res) => {   
+    try {
+        const itemData = await Item.destroy({
+            where: { id: req.params.id }
+        });
+        res.status(200).json(itemData);
+    } catch (error) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;
