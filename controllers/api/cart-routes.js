@@ -1,3 +1,4 @@
+var _ = require('lodash');
 const router = require('express').Router();
 const { Category, Product, User, Item, Cart } = require('../../models');
 
@@ -9,15 +10,13 @@ router.get('/', async (req, res) => {
             include: [ { model: Item } ]
         });
       
-        const cart = (cart) => cart.get({ plain: true });
+        const getCart = (cart) => cart.get({ plain: true });
+        const cart = getCart(cartData);
 
         console.log(cartData)
 
-        //console.log(cart(cartData));
-
         res.render('cart', {
             cart,
-            loggedIn: req.session.loggedIn
         });
     }
     catch (err)
