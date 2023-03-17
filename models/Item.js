@@ -11,13 +11,6 @@ Item.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        cart_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'cart',
-                key: 'id',
-            },
-        },
         name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -25,6 +18,17 @@ Item.init(
         price: {
             type: DataTypes.INTEGER,
             allowNull: false,
+        },
+        quantity: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        cart_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'cart',
+                key: 'id',
+            },
         },
     },
     {
