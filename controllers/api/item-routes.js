@@ -15,12 +15,6 @@ router.get('/:id', async (req, res) => {
             name: product[0].name,
             price: product[0].price,
         });
-        
-        // const itemData2 = await Item.findAll({
-        //     where: { id: req.params.id }
-        // });
-        // const item = itemData2.map((item) => item.get({ plain: true }));
-        // console.log(item[0]);
 
         res.status(200).json(itemData);
         
