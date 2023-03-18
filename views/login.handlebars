@@ -1,4 +1,59 @@
-<div id="login-container" class="row justify-space-between-md">
+{{!-- Login --}}
+<div class="pt-3 text-center bg-light">
+    <h2 class="mb-3">Login</h2>
+</div>
+<section class="container my-4 pb-4">
+  <form class="login-form">
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="email" id="email-login" class="form-control" />
+      <label class="form-label" for="email-login">Email address</label>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input type="password" id="password-login" class="form-control" />
+      <label class="form-label" for="password-login">Password</label>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+  </form>
+</section>
+
+{{!-- Sign Up --}}
+<div class="pt-3 text-center bg-light">
+  <h2 class="mb-3">Sign Up</h2>
+</div>
+<section class="container my-4 pb-4">
+  <form class="signup-form">
+    <!-- Username Input -->
+    <div class="form-outline mb-4">
+      <input type="text" id="username-signup" class="form-control" />
+      <label class="form-label" for="username-signup">Username</label>
+    </div>
+
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="email" id="email-signup" class="form-control" />
+      <label class="form-label" for="email-signup">Email address</label>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input type="password" id="password-signup" class="form-control" />
+      <label class="form-label" for="password-signup">Password</label>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+
+  </form>
+</section>
+
+
+{{!-- <div id="login-container" class="row justify-space-between-md">
   <div class="login-card">
     <h2 class="page-title">Login</h2>
     <form class="form login-form">
@@ -35,6 +90,6 @@
       </div>
     </form>
   </div>
-</div>
+</div> --}}
 
 <script src="./js/login.js"></script>
