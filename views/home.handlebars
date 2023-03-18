@@ -29,8 +29,14 @@
 </div>
 <!-- Carousel wrapper -->
 
+<div class="category-container">
+    <h2 class="mb-3">Food Categories</h2>
+    <hr class="hr" />
 
+    {{#each categories as |category|}}
+    <ul class="list-group list-group-light">
+        {{> category-details}}
+    </ul>
+    {{/each}}
+</div>
 
-{{#each categories as |category|}}
-{{> category-details}}
-{{/each}}
