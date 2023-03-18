@@ -1,12 +1,13 @@
 var _ = require('lodash');
 const router = require('express').Router();
 const { Category, Product, User, Item, Cart } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try
     {
         const cartData = await Cart.findOne({
-            where: { user_id: 1/*req.session.userId*/ },
+            where: { user_id: req.session.userId },
             include: [ { model: Item } ]
         });
       
@@ -22,6 +23,7 @@ router.get('/', async (req, res) => {
 
         res.render('cart', {
             cart,
+            loggedIn: req.session.loggedIn
         });
     }
     catch (err)
