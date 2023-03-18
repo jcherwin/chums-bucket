@@ -11,7 +11,7 @@ router.get('/:id', async (req, res) => {
         const product = productData.map((product) => product.get({ plain: true }));
         
         const itemData = await Item.create({
-            cart_id: 1/*req.session.cartId*/,
+            cart_id: req.session.cartId,
             name: product[0].name,
             price: product[0].price,
         });
