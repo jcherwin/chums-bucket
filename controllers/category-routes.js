@@ -20,6 +20,7 @@ router.get('/:id', async (req, res) => {
 
         res.render('category', {
             category,
+            loggedIn: req.session.loggedIn
         });
     }
     catch (err)

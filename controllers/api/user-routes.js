@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Cart } = require('../../models');
 
 // CREATE new user
 // eslint-disable-next-line no-use-before-define
@@ -36,7 +36,12 @@ router.post('/login', async (req, res) => {
       where: {
         email: req.body.email,
       },
+      include: { model: Cart }
     });
+
+    const getCart = (cart) => cart.get({ plain: true });
+    const cart = getCart(dbUserData.cart);
+    console.log(cart);
 
     if (!dbUserData) {
       res
@@ -58,6 +63,7 @@ router.post('/login', async (req, res) => {
       req.session.loggedIn = true;
       req.session.userId = dbUserData.id;
       req.session.username = dbUserData.name;
+      req.session.cartId = cart.id;
 
       res
         .status(200)
