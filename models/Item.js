@@ -19,10 +19,10 @@ Item.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        quantity: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
+        // quantity: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        // },
         cart_id: {
             type: DataTypes.INTEGER,
             references: {
