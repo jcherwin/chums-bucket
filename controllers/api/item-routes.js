@@ -61,8 +61,7 @@ router.delete('/:id', async (req, res) => {
 router.delete('/', async (req, res) => {   
     try {
         const itemData = await Item.destroy({
-            where: {},
-            truncate: true
+            where: { cart_id: req.session.cartId },
         });
         res.status(200).json(itemData);
     } catch (err) {
