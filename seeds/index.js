@@ -1,25 +1,19 @@
 const seedCategories = require('./category-seeds');
 const seedProducts = require('./product-seeds');
-const {seedCarts, seedUsers} = require('./example-seeds');
+const { Category, Product } = require('../models');
 
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
-  await sequelize.sync({ force: true });
+  await Product.drop();
+  await Category.drop();
+  await sequelize.sync({ force: false });
   console.log('\n----- DATABASE SYNCED -----\n');
   await seedCategories();
   console.log('\n----- CATEGORIES SEEDED -----\n');
 
   await seedProducts();
   console.log('\n----- PRODUCTS SEEDED -----\n');
-
-  await seedUsers();
-  console.log('\n----- USERS SEEDED -----\n');
-
-  await seedCarts();
-  console.log('\n----- CARTS SEEDED -----\n');
-
-  process.exit(0);
 };
 
-seedAll();
+module.exports = seedAll;
