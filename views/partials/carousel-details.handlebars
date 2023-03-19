@@ -1,0 +1,23 @@
+{{#if indicators}}
+<button 
+type="button"
+data-mdb-target="#carouselMaterialStyle"
+{{#ifEquals id 1}}
+class="active"
+aria-current="true"
+{{/ifEquals}}
+data-mdb-slide-to="{{toIndex id}}"
+aria-label="Slide {{id}}"></button>
+{{else}}
+<!-- Single item -->
+<div class="carousel-item {{#ifEquals id 1}}active{{/ifEquals}}">
+    <a href="/category/{{id}}">
+        <img src="{{img}}" class="d-block w-100"
+        alt="Sunset Over the City" />
+        <div class="carousel-caption d-md-block">
+            <h5>{{name}}</h5>
+        </div>
+    </a>
+</div>
+{{/if}}
+
