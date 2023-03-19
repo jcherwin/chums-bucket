@@ -56,7 +56,7 @@ source db/schema.sql
 Finally, whether you are running this locally or via Heroku deployment, the seeds for categories and products are included when you run the server via the following command:
 
 ```md
-node server.js
+npm start
 ```
 
 
