@@ -2,7 +2,7 @@
 
 ## Description
 
-Chum's Bucket was created because we wanted to make a functional MVC web application for the purpose of acting as an professional E-commerce platform for a restaurant.
+We made Chum's Bucket because we wanted to create a professional E-Commerce platform for a restaurant using what we've learned about the MVC framework.
 
 We wanted to create an application that would allow users select from a variety of products, view pictures of those products to help them make their selection, and then select those products to be added to their unique cart (with the condition of already being logged in to application), and then simulate checking out which removes all items from their cart. These carts are persistent on Chum's Bucket's back-end database, so users can come back and add to or delete from their cart whenever they want. 
 
