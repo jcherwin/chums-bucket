@@ -4,7 +4,7 @@
 
 We made Chum's Bucket because we wanted to create a professional E-Commerce platform for a restaurant using what we've learned about the MVC framework.
 
-We wanted to create an application that would allow users select from a variety of products, view pictures of those products to help them make their selection, and then select those products to be added to their unique cart (with the condition of already being logged in to application), and then simulate checking out which removes all items from their cart. These carts are persistent on Chum's Bucket's back-end database, so users can come back and add to or delete from their cart whenever they want. 
+We wanted to create an application that would allow users to select from a variety of products, view pictures of those products to help them make their selection, and then select those products to be added to their own unique cart (with the condition of already being logged in to application), and then simulate checking out which removes all items from their cart and places an order. These carts are persistent on Chum's Bucket's back-end database, so users can come back and add to or delete from their cart whenever they want. 
 
 Through the course of this project, we learned more about the MVC framework, and how to properly set up models and associations through the Sequelize ORM. We learned more about using Handlebars to programmatically fill in our HTML views, as well as tying in front-end JavaScript to send and get information to/from the back-end. We also learned more about collaborative projects and how to work with a Minimum Viable Product and deadlines in mind.
 
