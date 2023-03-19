@@ -10,6 +10,7 @@ router.get('/:id', async (req, res) => {
 
         const product = productData.map((product) => product.get({ plain: true }));
         
+        // Create an Item based off of the product with the user's cartId
         const itemData = await Item.create({
             cart_id: req.session.cartId,
             name: product[0].name,
@@ -25,7 +26,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-//UPDATE one item
+// UPDATE the quantity of one item
 // router.put('/:id', async (req, res) => {
 //     try {
 //         const itemData = await Item.update(

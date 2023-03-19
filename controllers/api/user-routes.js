@@ -5,16 +5,19 @@ const { User, Cart } = require('../../models');
 // eslint-disable-next-line no-use-before-define
 router.post('/', async (req, res) => {
     try {
+        // Create the user with supplied info
         const dbUserData = await User.create({
             name: req.body.username,
             email: req.body.email,
             password: req.body.password,
         });
 
+        // Create the associated cart
         const cartData = await Cart.create({
             user_id: dbUserData.id
         });
 
+        // Save session with username, id, and cartId
         req.session.save(() => {
             req.session.loggedIn = true;
             req.session.userId = dbUserData.id;
@@ -39,9 +42,9 @@ router.post('/login', async (req, res) => {
       include: { model: Cart }
     });
 
+    // Get the cart from the user
     const getCart = (cart) => cart.get({ plain: true });
     const cart = getCart(dbUserData.cart);
-    console.log(cart);
 
     if (!dbUserData) {
       res
@@ -59,6 +62,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    // Save the session variables
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.userId = dbUserData.id;

@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { User, Category, Product } = require('../models');
-const withAuth = require('../utils/auth');
+const { Category, } = require('../models');
 
+// Render the categories to the homepage
 router.get('/', async (req, res) => {
     try
     {
@@ -22,6 +22,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Send the user to Login page
 router.get('/login', (req, res) => {
     console.log('LOGIN');
     if (req.session.loggedIn) {
