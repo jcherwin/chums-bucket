@@ -14,6 +14,7 @@ router.get('/:id', async (req, res) => {
             cart_id: req.session.cartId,
             name: product[0].name,
             price: product[0].price,
+            img: product[0].img,
         });
 
         res.status(200).json(itemData);
@@ -25,23 +26,23 @@ router.get('/:id', async (req, res) => {
 });
 
 //UPDATE one item
-router.put('/:id', async (req, res) => {
-    try {
-        const itemData = await Item.update(
-        {
-            quantity: req.body.quantity,
-        },
-        {
-            where: { id: req.params.id },
-        });
+// router.put('/:id', async (req, res) => {
+//     try {
+//         const itemData = await Item.update(
+//         {
+//             quantity: req.body.quantity,
+//         },
+//         {
+//             where: { id: req.params.id },
+//         });
 
-        res.status(200).json(itemData);
+//         res.status(200).json(itemData);
         
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).json(err);
+//     }
+// });
 
 //DELETE one item
 router.delete('/:id', async (req, res) => {   

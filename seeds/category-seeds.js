@@ -2,19 +2,24 @@ const { Category } = require('../models');
 
 const categoryData = [
     {
-        name: 'One',
+        name: 'Salmon',
+        img: 'https://tinyurl.com/52ztew8b',
     },
     {
-        name: 'Two',
+        name: 'Crab',
+        img: 'https://tinyurl.com/5bw8njs9',
     },
     {
-        name: 'Three',
+        name: 'Lobster',
+        img: 'https://tinyurl.com/372v7wkw',
     },
     {
-        name: 'Four',
+        name: 'Shrimp',
+        img: 'https://tinyurl.com/5n8h9etw',
     },
     {
-        name: 'Five',
+        name: 'Drinks',
+        img: 'https://tinyurl.com/2p8ttefz',
     },
 ];
 
