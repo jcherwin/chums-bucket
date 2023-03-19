@@ -10,10 +10,10 @@ Through the course of this project, we learned more about the MVC framework, and
 
 ## User Story
 AS a customer who has heard about Chum's Bucket and wants to place an order with them online
-I WANT a website where I can view what kind of food they have
-THEN I can add food to a cart after logging in
-THEN I want to see my subtotal of all my items
-FINALLY I want to checkout and place my order
+- I WANT a website where I can view what kind of food they have
+- THEN I can add food to a cart after logging in
+- THEN I want to see my subtotal of all my items
+- FINALLY I want to checkout and place my order
 
 
 ## Table of Contents
