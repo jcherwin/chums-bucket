@@ -51,7 +51,21 @@ router.delete('/:id', async (req, res) => {
             where: { id: req.params.id }
         });
         res.status(200).json(itemData);
-    } catch (error) {
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+//DELETE all item
+router.delete('/', async (req, res) => {   
+    try {
+        const itemData = await Item.destroy({
+            where: {},
+            truncate: true
+        });
+        res.status(200).json(itemData);
+    } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
