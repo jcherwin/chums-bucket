@@ -64,6 +64,7 @@ Desktop.ini
 ######################
 /bin/
 /deploy/
+docker/
 
 ######################
 # Logs
