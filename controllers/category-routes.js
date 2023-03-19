@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Category, Product } = require('../models');
 
+// Render all products of a given category
 router.get('/:id', async (req, res) => {
     try
     {

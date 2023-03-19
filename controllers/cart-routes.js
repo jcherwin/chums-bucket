@@ -1,8 +1,9 @@
 var _ = require('lodash');
 const router = require('express').Router();
-const { Category, Product, User, Item, Cart } = require('../models');
+const { Item, Cart } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Render the cart and a corresponding subtotal
 router.get('/', withAuth, async (req, res) => {
     try
     {
@@ -14,12 +15,9 @@ router.get('/', withAuth, async (req, res) => {
         const getCart = (cart) => cart.get({ plain: true });
         const cart = getCart(cartData);
 
-        //console.log(cartData)
-
+        // Use lodash to deconstruct price from the items and get a sum.
         const prices = _.map(cart.items, 'price');
         cart.subtotal = _.sum(prices)
-
-        console.log(cart);
 
         res.render('cart', {
             cart,

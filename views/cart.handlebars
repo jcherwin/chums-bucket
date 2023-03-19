@@ -7,10 +7,11 @@
           <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
           <div>
             <p class="mb-0">
-            <span class="text-muted">Sort by:</span>
+              <span class="text-muted">Sort by:</span>
               <a href="#!" class="text-body">price
                 <i class="fas fa-angle-down mt-1"></i>
-              </a></p>
+              </a>
+            </p>
           </div>
         </div>
 
@@ -26,7 +27,8 @@
 
         <div class="card">
           <div class="card-body">
-            <button {{#if cart.subtotal}}id="checkout" data-mdb-toggle="modal" data-mdb-target="#checkoutModal"{{/if}} type="button" class="btn btn-warning btn-block btn-lg">Checkout</button>
+            <button {{#if cart.subtotal}}id="checkout" data-mdb-toggle="modal" data-mdb-target="#checkoutModal" {{/if}}
+              type="button" class="btn btn-warning btn-block btn-lg">Checkout</button>
           </div>
         </div>
 
@@ -43,10 +45,11 @@
         <h5 class="modal-title" id="checkoutLabel">Checkout</h5>
         <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">All of your items have been added to an order and will be arriving at your location soon!</div>
+      <div class="modal-body">All of your items have been added to an order and will be arriving at your location soon!
+      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">
-            <a href="./" style="color: white">Back to Home</a>
+          <a href="./" style="color: white">Back to Home</a>
         </button>
       </div>
     </div>
