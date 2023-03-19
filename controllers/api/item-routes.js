@@ -9,7 +9,8 @@ router.get('/:id', async (req, res) => {
         });
 
         const product = productData.map((product) => product.get({ plain: true }));
-        
+
+        // Create an Item based off of the product with the user's cartId
         const itemData = await Item.create({
             cart_id: req.session.cartId,
             name: product[0].name,
@@ -18,14 +19,14 @@ router.get('/:id', async (req, res) => {
         });
 
         res.status(200).json(itemData);
-        
+
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
 });
 
-//UPDATE one item
+// UPDATE the quantity of one item
 // router.put('/:id', async (req, res) => {
 //     try {
 //         const itemData = await Item.update(
@@ -37,7 +38,7 @@ router.get('/:id', async (req, res) => {
 //         });
 
 //         res.status(200).json(itemData);
-        
+
 //     } catch (err) {
 //         console.log(err);
 //         res.status(500).json(err);
@@ -45,7 +46,7 @@ router.get('/:id', async (req, res) => {
 // });
 
 //DELETE one item
-router.delete('/:id', async (req, res) => {   
+router.delete('/:id', async (req, res) => {
     try {
         const itemData = await Item.destroy({
             where: { id: req.params.id }
@@ -58,11 +59,10 @@ router.delete('/:id', async (req, res) => {
 });
 
 //DELETE all item
-router.delete('/', async (req, res) => {   
+router.delete('/', async (req, res) => {
     try {
         const itemData = await Item.destroy({
-            where: {},
-            truncate: true
+            where: { cart_id: req.session.cartId },
         });
         res.status(200).json(itemData);
     } catch (err) {

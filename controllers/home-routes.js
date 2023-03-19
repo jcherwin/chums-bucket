@@ -1,12 +1,11 @@
 const router = require('express').Router();
-const { User, Category, Product } = require('../models');
-const withAuth = require('../utils/auth');
+const { Category, } = require('../models');
 
+// Render the categories to the homepage
 router.get('/', async (req, res) => {
-    try
-    {
+    try {
         const categoryData = await Category.findAll();
-      
+
         const categories = categoryData.map((category) => category.get({ plain: true }));
 
         console.log(categories);
@@ -15,13 +14,12 @@ router.get('/', async (req, res) => {
             categories,
             loggedIn: req.session.loggedIn
         });
-    }
-    catch (err)
-    {
+    } catch (err) {
         res.status(500).json(err);
     }
 });
 
+// Send the user to Login page
 router.get('/login', (req, res) => {
     console.log('LOGIN');
     if (req.session.loggedIn) {

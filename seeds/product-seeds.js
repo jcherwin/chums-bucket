@@ -1,5 +1,6 @@
 const { Product } = require('../models');
 
+// Seed data for products
 const productData = [
     {
         name: 'Greek Salmon Bowl',
