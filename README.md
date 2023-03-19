@@ -25,7 +25,7 @@ AS a customer who has heard about Chum's Bucket and wants to place an order with
 - [License](#license)
 
 
-# Demo
+## Demo
 
 Here is a link to the deployed application being hosted on: [Heroku](https://lit-citadel-42811.herokuapp.com/)
 
