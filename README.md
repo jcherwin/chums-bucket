@@ -24,7 +24,6 @@ FINALLY I want to checkout and place my order
 - [Credits](#credits)
 - [License](#license)
 
-<br>
 
 # Demo
 
