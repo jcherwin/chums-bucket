@@ -12,7 +12,15 @@
             <p class="text-muted mb-0">Price: ${{price}}</p>
         </div>
         </div>
-        <button id="{{id}}" type="button" class="cart-btn btn btn-primary btn-rounded btn-sm">Add to Cart</button>
+        <button id="{{id}}" type="button"
+        data-mdb-toggle="modal"
+        {{#if ../loggedIn}}
+        data-mdb-target="#addToCartModal" 
+        {{else}}
+        data-mdb-target="#loginPromptModal" 
+        {{/if}}
+        class="{{#if ../loggedIn}}cart-btn{{/if}} btn btn-primary btn-rounded btn-sm">
+        Add to Cart</button>
     </li>
     {{/each}}
 </ul>
