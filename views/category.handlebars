@@ -1,4 +1,45 @@
 {{#each category as |category|}}
-{{> product-details}}
+{{> product-details loggedIn=../loggedIn}}
 {{/each}}
-<script src="../js/items.js"></script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="addToCartModal" tabindex="-1" aria-labelledby="addToCartLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addToCartLabel">Item successfully added to Cart!</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Now you can either collect 'yer loot and set sail, or keep diggin' for more delicious treasure.</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">Continue Shopping</button>
+        <button type="button" class="btn btn-warning">
+            <a href="../cart" style="color: white">Go to Cart</a>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="loginPromptModal" tabindex="-1" aria-labelledby="loginPromptLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginPromptLabel">Login</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">You must login before adding items to your cart</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Go Back</button>
+        <button type="button" class="btn btn-primary">
+            <a href="../login" style="color: white">Go to Login</a>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="../js/category.js"></script>

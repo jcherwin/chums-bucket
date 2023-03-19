@@ -1,23 +1,23 @@
-const addToCart = async (event) => {
+const removeFromCart = async (event) => {
 
     const btnId = event.target.getAttribute('id');
     console.log(btnId);
 
-
     const response = await fetch(`/api/item/${btnId}`, {
-    method: 'GET',
+        method: 'DELETE',
     });
 
     if (response.ok) {
-    alert('Added to cart.');
+        //alert('Removed from cart.');
+        location.reload();
     } else {
-    alert('Failed to add to cart.');
+        alert('Failed to remove from cart.');
     }
 };
 
 const buttons = document.querySelectorAll('.cart-btn');
 buttons.forEach((post) => {
     post.addEventListener('click', function eventHandler(event) {
-        addToCart(event);
+        removeFromCart(event);
     });
 });
