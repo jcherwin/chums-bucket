@@ -19,10 +19,10 @@ Product.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        // quantity: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        // },
+        img: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         category_id: {
             type: DataTypes.INTEGER,
             references: {
