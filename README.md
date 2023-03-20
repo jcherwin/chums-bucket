@@ -66,7 +66,7 @@ npm start
 
 **Collaborators**
 - [Jon Cherwin](https://github.com/jcherwin)
-- [Jullian Calkins]()
+- [Jullian Calkins](https://github.com/Jullian0426)
 
 <!-- If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section. -->
 
