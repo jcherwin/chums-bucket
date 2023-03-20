@@ -45,7 +45,7 @@ npm install OR npm i
 
 This image is an example of what to expect when viewing the complete webpage.
 
-![This is a working image of this project](assets/images/demo-screenshot.png)
+![This is a working image of this project](assets/images/demo-screenshot2.png)
 
 Before running the server, you should setup the database schema by running the following commands after logging in through the SQL Client or Docker:
 
