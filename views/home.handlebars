@@ -1,42 +1,43 @@
-<!-- Carousel wrapper -->
-<div id="carouselMaterialStyle" class="w-75 mx-auto carousel slide carousel-fade" data-mdb-ride="carousel">
-
-    <!-- Indicators -->
-    <div class="carousel-indicators">
-    {{#each categories as |category|}}
-    {{> carousel-details indicators=true}}
-    {{/each}}
-    </div>
-
-    <!-- Inner -->
-    <div class="carousel-inner rounded-5 shadow-4-strong">
-    {{#each categories as |category|}}
-    {{> carousel-details}}
-    {{/each}}
-    </div>
-    <!-- Inner -->
-
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-
-</div>
-<!-- Carousel wrapper -->
-
 <div class="category-container">
     <h2 class="mb-3">Food Categories</h2>
     <hr class="hr" />
 
-    {{#each categories as |category|}}
-    <ul class="list-group list-group-light">
-        {{> category-details}}
-    </ul>
-    {{/each}}
-</div>
+    <!-- Carousel wrapper -->
+    <div id="carouselMaterialStyle" class="mx-auto carousel slide carousel-fade" data-mdb-ride="carousel">
 
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            {{#each categories as |category|}}
+            {{> carousel-details indicators=true}}
+            {{/each}}
+        </div>
+
+        <!-- Inner -->
+        <div class="carousel-inner rounded-5 shadow-4-strong">
+            {{#each categories as |category|}}
+            {{> carousel-details}}
+            {{/each}}
+        </div>
+        <!-- Inner -->
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-mdb-target="#carouselMaterialStyle"
+            data-mdb-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-mdb-target="#carouselMaterialStyle"
+            data-mdb-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+    </div>
+    <!-- Carousel wrapper -->
+
+    <ul class="list-group list-group-light">
+        {{#each categories as |category|}}
+        {{> category-details}}
+        {{/each}}
+    </ul>
+</div>

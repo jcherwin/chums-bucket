@@ -45,7 +45,7 @@ npm install OR npm i
 
 This image is an example of what to expect when viewing the complete webpage.
 
-![This is a working image of this project](assets/images/demo-screenshot.png)
+![This is a working image of this project](assets/images/demo-screenshot2.png)
 
 Before running the server, you should setup the database schema by running the following commands after logging in through the SQL Client or Docker:
 
@@ -66,7 +66,7 @@ npm start
 
 **Collaborators**
 - [Jon Cherwin](https://github.com/jcherwin)
-- [Jullian Calkins]()
+- [Jullian Calkins](https://github.com/Jullian0426)
 
 <!-- If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section. -->
 
