@@ -4,23 +4,28 @@ const { Category } = require('../models');
 const categoryData = [
     {
         name: 'Salmon',
-        img: 'https://tinyurl.com/52ztew8b',
+        img: '/images/categories/salmon.jpg',
+        description: 'Try some of our nutritious, mouth-watering salmon dishes.',
     },
     {
         name: 'Crab',
-        img: 'https://tinyurl.com/5bw8njs9',
+        img: '/images/categories/crab.jpg',
+        description: 'Tease your tastebuds with our delectable crab meals.',
     },
     {
         name: 'Lobster',
-        img: 'https://tinyurl.com/372v7wkw',
+        img: '/images/categories/lobster.jpg',
+        description: 'Your wait for real New England seafood is over!',
     },
     {
         name: 'Shrimp',
-        img: 'https://tinyurl.com/5n8h9etw',
+        img: '/images/categories/shrimp.jpg',
+        description: 'Treat yourself with some our savory shrimp entrees.',
     },
     {
         name: 'Drinks',
-        img: 'https://tinyurl.com/2p8ttefz',
+        img: '/images/categories/drinks.jpg',
+        description: 'Stay refreshed with our selection of drinks!',
     },
 ];
 

@@ -2,141 +2,140 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Font Awesome -->
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    rel="stylesheet"
-  />
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    rel="stylesheet"
-  />
-  <!-- MDB -->
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="/css/style.css" />
-  <title>Chum's Bucket</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>Chum's Bucket</title>
 </head>
 
 <body>
-  <header>
-  <!-- Jumbotron -->
-  <div class="p-3 text-center bg-light">
-    <h1 class="mb-3">Chum's Bucket</h1>
-    <h4 class="mb-3">The Reel Deal</h4>
-  </div>
-  <!-- Jumbotron -->
-</header>
+    <header>
+        <div class="text-center">
+            <h1 class="app-title">
+                <a href="/" style="text-decoration:none;color:black;">Chum's Bucket</a>
+            </h1>
+        </div>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-      <!-- Toggle button -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-mdb-toggle="collapse"
-        data-mdb-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
+                <!-- Collapsible wrapper -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left links -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        {{#if loggedIn}}
+                        <li class="nav-item">
+                            <a id="logout" class="nav-link" href="#">Logout</a>
+                        </li>
+                        {{else}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        {{/if}}
+                    </ul>
+                    <!-- Left links -->
+                </div>
+                <!-- Collapsible wrapper -->
 
-      <!-- Collapsible wrapper -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- Left links -->
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          {{#if loggedIn}}
-          <li class="nav-item">
-            <a id="logout" class="nav-link" href="#">Logout</a>
-          </li>
-          {{else}}
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          {{/if}}
-        </ul>
-        <!-- Left links -->
-      </div>
-      <!-- Collapsible wrapper -->
+                <!-- Right elements -->
+                <div class="d-flex align-items-center">
+                    <!-- Icon -->
+                    <a class="text-reset me-3" href="/cart">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+                <!-- Right elements -->
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
 
-      <!-- Right elements -->
-      <div class="d-flex align-items-center">
-        <!-- Icon -->
-        <a class="text-reset me-3" href="/cart">
-          <i class="fas fa-shopping-cart"></i>
-        </a>
-      </div>
-      <!-- Right elements -->
-    </div>
-    <!-- Container wrapper -->
-  </nav>
+        {{#if categories}}
+        <!-- Background image -->
+        <div class="p-5 text-center bg-image" style="
+            background-image: url('/images/homepage.jpg');
+            height: 350px;
+            ">
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <div class="text-white">
+                        <h1 class="mb-3">Chum's Bucket</h1>
+                        <h4 class="mb-3"><i>The Reel deal!</i></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+        <!-- Background image -->
+    </header>
 
-  <main class="container">
-    <div class="gallery">
-      {{{body}}}
-    </div>
-  </main>
+    <main class="container">
+        {{{body}}}
+    </main>
 
-<footer class="bg-light text-center text-lg-start">
-  <!-- Grid container -->
-  <div class="container p-4">
-    <!--Grid row-->
-    <div class="row">
-      <!--Grid column-->
-      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-        <h5 class="text-uppercase">License</h5>
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Grid container -->
+        <div class="container p-3">
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">License</h5>
+                    <p>
+                        This project is protected by an MIT license. Learn more about MIT licenses at
+                        <a
+                            href="https://pitt.libguides.com/openlicensing/MIT#:~:text=Like%20the%20Apache%202.0%2C%20and,sell%20copies%20of%20the%20software">
+                            pitt.libguides.com</a>
+                    </p>
+                </div>
+                <!--Grid column-->
 
-        <p>
-          This project is protected by an MIT license. Learn more about MIT licenses at <a 
-          href="https://pitt.libguides.com/openlicensing/MIT#:~:text=Like%20the%20Apache%202.0%2C%20and,sell%20copies%20of%20the%20software">
-          pitt.libguides.com</a>
-        </p>
-      </div>
-      <!--Grid column-->
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">About this Project</h5>
+                    <p>
+                        Chum's Bucket is an example website boasting E-Commerce functionality. This is achieved through
+                        storing products and categories
+                        of products to a mySQL database and using Sequelize to fetch and display the data to the page.
+                        User data is also stored along with
+                        an associated cart and the items stored within it.
+                    </p>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
 
-      <!--Grid column-->
-      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-        <h5 class="text-uppercase">About this Project</h5>
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-dark" href="https://github.com/jcherwin">jcherwin</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 
-        <p>
-          Chum's Bucket is an example website boasting ecommerce functionallity. This is achieved through storing products and categories
-          of products to a mySQL database and using sequelize to fetch and display the data to the page. User data is also stored along with 
-          an associated cart and the items stored within it.
-        </p>
-      </div>
-      <!--Grid column-->
-    </div>
-    <!--Grid row-->
-  </div>
-  <!-- Grid container -->
-
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2023 Copyright:
-    <a class="text-dark" href="https://mdbootstrap.com/">jcherwin</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-
-  <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
-  ></script>
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 
 </html>

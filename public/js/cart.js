@@ -17,7 +17,7 @@ const removeFromCart = async (event) => {
 
 const checkoutCart = async () => {
 
-    const response = await fetch(`/api/item`, {
+    const response = await fetch('/api/item', {
         method: 'DELETE',
     });
 
@@ -27,7 +27,7 @@ const checkoutCart = async () => {
     } else {
         alert('Failed to delete cart.');
     }
-}
+};
 
 if(document.querySelector('.cart-btn')){
     const buttons = document.querySelectorAll('.cart-btn');
